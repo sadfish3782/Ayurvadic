@@ -1,0 +1,503 @@
+body {
+    margin: 0;
+    font-family: 'Friz Quadrata', sans-serif; /* Updated font */
+    background-color: black; /* Background color */
+    color: white; /* Default text color */
+}
+
+.top-trim {
+    background-color: #333; /* Deep grey color for the trim */
+    padding: 10px 0; /* Space inside the trim */
+    overflow: hidden; /* Ensures the text is contained */
+    position: fixed; /* Keep the trim at the top */
+    top: 0; /* Position it at the top */
+    left: 0;
+    right: 0;
+    z-index: 10; /* Ensure it appears above other elements */
+    display: block; /* Make sure it's displayed */
+}
+
+.scroll-text {
+    white-space: nowrap; /* Prevents text from wrapping */
+    display: inline-block; /* Keeps text inline */
+    animation: scroll 10s linear infinite; /* Animation for scrolling */
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(100%); /* Start off-screen to the right */
+    }
+    100% {
+        transform: translateX(-100%); /* End off-screen to the left */
+    }
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    background-color: #50C878; /* Emerald green color for the header */
+    padding: 10px 20px; 
+    position: fixed; /* Fixed position to always be at the top */
+    top: -100px; /* Initially hide the header */
+    left: 0;
+    right: 0;
+    transition: top 0.3s; /* Smooth transition for the header */
+    z-index: 20; /* Ensure it's above the trim */
+}
+
+.logo img {
+    height: 80px; /* Adjust logo height as needed */
+}
+
+.navigation {
+    display: flex; 
+    justify-content: center; 
+    flex-grow: 1; /* Allow navigation to take up available space */
+}
+
+.navigation ul {
+    list-style: none; /* Removes bullet points */
+    display: flex; /* Displays items in a row */
+    margin: 0; /* Removes default margin */
+    padding: 0; /* Removes default padding */
+}
+
+.navigation li {
+    margin-right: 30px; /* Space between menu items */
+}
+
+.navigation a {
+    color: black; /* Change text color to black */
+    text-decoration: none; /* Removes underline from links */
+    font-weight: 400; /* Thinner font weight */
+    font-size: 20px; /* Increase font size */
+    transition: color 0.3s, transform 0.3s; /* Smooth transition for hover effects */
+    padding: 5px; /* Adding padding for better hover area */
+}
+
+.navigation a:hover {
+    color: #FF8C00; /* Change color on hover to burnt orange */
+    transform: scale(1.3); /* Enlarge the text significantly on hover */
+}
+
+/* Social Media Icons */
+.social-icons-header {
+    display: flex; /* Align icons in a row */
+    align-items: center; /* Center icons vertically */
+}
+
+.social-icons-header a img {
+    height: 30px; /* Adjust icon height */
+    margin-left: 10px; /* Space between icons */
+}
+
+/* Responsive: Hide navigation on mobile */
+@media (max-width: 768px) {
+    .navigation {
+        display: none; /* Hide navigation links on mobile */
+    }
+}
+.menu-icon {
+    display: none; /* Hide menu icon by default */
+    cursor: pointer; /* Pointer cursor for clickable */
+}
+
+.menu-icon-img {
+    height: 30px; /* Adjust as needed */
+}
+
+/* Show the menu icon on mobile */
+@media (max-width: 768px) {
+    .menu-icon {
+        display: block; /* Show menu icon on mobile */
+    }
+
+    .navigation {
+        display: none; /* Hide navigation links on mobile */
+        flex-direction: column; /* Stack links vertically */
+        position: absolute; /* Position absolutely */
+        background-color: #50C878; /* Background color for dropdown */
+        width: 100%; /* Full width */
+        left: 0;
+        top: 100%; /* Below the header */
+        padding: 10px 0; /* Space inside dropdown */
+        border-radius: 10px; /* Round corners */
+        box-shadow: 0 4px 8px rgba(255, 215, 0, 0.6); /* Gold shadow */
+    }
+
+    .navigation.active {
+        display: flex; /* Show navigation links when active */
+    }
+
+    .navigation ul {
+        list-style: none; /* Removes bullet points */
+        margin: 0; /* Removes default margin */
+        padding: 0; /* Removes default padding */
+    }
+
+    .navigation li {
+        margin: 0; /* Remove margin between items */
+        border-bottom: 1px solid #fff; /* Optional: add a separator between items */
+    }
+
+    .navigation a {
+        color: black; /* Text color */
+        text-decoration: none; /* Remove underline */
+        font-weight: 400; /* Thinner font weight */
+        font-size: 18px; /* Adjust font size */
+        padding: 10px 20px; /* Space around links */
+        display: block; /* Make links block-level for better touch target */
+        transition: color 0.3s; /* Smooth transition for color change */
+    }
+    
+    .navigation a:hover {
+        color: #50C878; /* Change text color on hover */
+        background-color: transparent; /* Ensure background remains transparent */
+    }
+    
+}
+
+.hero-section {
+    position: relative; /* Keep relative positioning for children */
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    overflow: hidden; /* Hides overflow */
+}
+
+.hero-images {
+    display: flex; /* Align images in a row */
+    height: 100%;
+    transition: transform 1s ease; /* Smooth transition for sliding effect */
+}
+
+.hero-image {
+    min-width: 100%; /* Each image covers full width */
+    height: 100%; /* Each image covers full height */
+    object-fit: cover; /* Maintain aspect ratio */
+}
+
+.hero-overlay {
+    position: absolute; /* Absolute positioning to overlay */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white; /* Text color */
+    text-align: center; /* Center text */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    z-index: 1; /* Ensure overlay is above images */
+}
+
+.cta-button {
+    background-color: #FF7F50; /* Button color */
+    color: white; /* Button text color */
+    padding: 10px 20px; /* Button padding */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.cta-button:hover {
+    background-color: #e67e22; /* Darker shade on hover */
+}
+#why-us {
+    background-color: #222; /* Dark background for contrast */
+    color: white; /* Text color */
+    padding: 40px 20px; /* Padding for spacing */
+    text-align: center; /* Center the text */
+}
+
+.why-us-content {
+    display: flex; /* Use flexbox for layout */
+    justify-content: center; /* Center the content */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.reason {
+    flex: 1; /* Make each reason take equal space */
+    margin: 20px; /* Margin for spacing */
+    min-width: 250px; /* Minimum width for smaller screens */
+}
+
+.reason h3 {
+    color: gold; /* Change heading color to gold */
+}
+
+#products {
+    padding: 40px 20px;
+    background-color: #333;
+    color: white;
+    text-align: center;
+}
+
+.product-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.product-card {
+    position: relative;
+    width: 80%; /* Adjusted width for smaller cards */
+    margin: 20px 0;
+    overflow: hidden;
+    transition: transform 0.3s;
+    display: flex; /* Use flex for alignment */
+}
+
+.product-card.left {
+    flex-direction: row; /* Align items horizontally */
+}
+
+.product-card.right {
+    flex-direction: row-reverse; /* Reverse order for right alignment */
+}
+
+.product-image img {
+    width: 300px; /* Updated image size */
+    transition: transform 0.3s; /* Smooth image expansion on hover */
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.1); /* Scale image on hover */
+}
+
+.product-details {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(221, 216, 189, 0.8); /* Gold background on hover */
+    color: black; /* Change text color to black for contrast */
+    padding: 10px;
+    opacity: 0; /* Hide initially */
+    transition: opacity 0.3s; /* Transition for opacity */
+    height: 300px; /* Set height equal to image height */
+    display: flex; /* Use flex to center content */
+    flex-direction: column; /* Ensure product name is above the description */
+    justify-content: center; /* Center horizontally */
+}
+
+.product-card:hover .product-details {
+    opacity: 1; /* Show details on hover */
+}
+
+.product-details h3 {
+    margin-bottom: 10px; /* Space below product name */
+    font-size: 24px; /* Make product name larger */
+    color: black; /* Set product name color */
+}
+
+.highlight {
+    font-weight: bold;
+    color: #55400c; /* Gold color for emphasis */
+}
+
+#about-us {
+    padding: 50px 20px; /* Add padding for space */
+    background-color: #222; /* Dark background for contrast */
+    color: white; /* Text color */
+}
+
+#about-us h2 {
+    font-size: 36px; /* Heading size */
+    margin-bottom: 40px; /* Space below heading */
+}
+
+.about-content {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping of items to the next line */
+    justify-content: space-around; /* Space items evenly */
+}
+
+.about-item {
+    width: 20%; /* Adjust width as needed */
+    padding: 20px;
+    text-align: center;
+    box-sizing: border-box;
+    margin-bottom: 30px; /* Space below items */
+}
+
+.about-item img {
+    width: 100px; /* Adjust image size */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 10px; /* Space below image */
+}
+
+.about-item h3 {
+    font-size: 24px; /* Heading size */
+    margin-bottom: 10px; /* Space below heading */
+}
+
+.about-item p {
+    font-size: 18px; /* Paragraph size */
+    line-height: 1.6; /* Line spacing */
+    max-width: 800px; /* Limit width for readability */
+    margin: 0 auto; /* Center align */
+}
+#featured-products {
+    padding: 50px 20px; /* Add padding for space */
+    background-color: #222; /* Dark background for contrast */
+    color: white; /* Text color */
+    text-align: center; /* Center align text */
+    position: relative; /* Required for absolute positioning of items */
+    overflow: hidden; /* Prevent overflow */
+}
+
+#featured-products h2 {
+    font-size: 36px; /* Heading size */
+    margin-bottom: 40px; /* Space below heading */
+}
+
+.featured-container {
+    position: relative; /* Position for overlapping images */
+    height: 400px; /* Set a fixed height to prevent cropping */
+}
+
+.featured-item {
+    position: absolute; /* Stack items on top of each other */
+    width: 100%; /* Full width for each item */
+    opacity: 0; /* Start invisible */
+    transition: opacity 1s ease-in-out; /* Smooth transition for opacity */
+}
+
+.featured-item.active {
+    opacity: 1; /* Show the active item */
+}
+
+.featured-image {
+    width: 100%; /* Make images responsive */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 400px; /* Set a max height for consistency */
+    object-fit: cover; /* Ensure images cover the container without cropping */
+}
+
+.featured-item h3,
+.featured-item p {
+    position: absolute; /* Position heading and paragraph */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust for centering */
+    color: gold; /* Gold color for contrast */
+    text-align: center; /* Center align text */
+    width: 90%; /* Limit width for responsiveness */
+    box-sizing: border-box; /* Include padding and borders in element's total width */
+}
+
+.featured-item h3 {
+    bottom: 30%; /* Place above the bottom */
+    font-size: 24px; /* Heading size */
+}
+
+.featured-item p {
+    bottom: 15%; /* Place above the heading */
+    font-size: 18px; /* Paragraph size */
+    max-width: 600px; /* Limit width for readability */
+    margin: 0 auto; /* Center align */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .featured-item h3,
+    .featured-item p {
+        font-size: 16px; /* Smaller font size on mobile */
+        width: 100%; /* Full width for smaller screens */
+    }
+}
+
+
+#contact-form {
+    background-color: #222; /* Dark background color */
+    color: white; /* White text color */
+    padding: 40px 20px; /* Padding for the section */
+    text-align: center; /* Center align text */
+}
+
+.contact-form {
+    max-width: 600px; /* Limit width for the form */
+    margin: 0 auto; /* Center the form */
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%; /* Full width inputs */
+    padding: 10px; /* Padding for inputs */
+    margin: 10px 0; /* Margin for spacing */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+}
+
+.contact-form button {
+    background-color: gold; /* Button color */
+    color: black; /* Text color */
+    padding: 10px 20px; /* Padding for the button */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer on hover */
+}
+
+.contact-form button:hover {
+    background-color: burnt orange; /* Change color on hover */
+}
+
+#footer {
+    background-color: #0d4620; /* Dark background color */
+    color: white; /* White text color */
+    padding: 40px 20px; /* Padding for the footer */
+    text-align: center; /* Center align text */
+}
+
+.footer-container {
+    display: flex; /* Flexbox layout for footer sections */
+    justify-content: center; /* Center align footer sections */
+    flex-wrap: wrap; /* Allow sections to wrap on smaller screens */
+    max-width: 1200px; /* Maximum width for the footer container */
+    margin: 0 auto; /* Center the footer container */
+}
+
+.footer-section {
+    flex: 1; /* Each section takes equal space */
+    min-width: 200px; /* Minimum width for responsiveness */
+    margin: 10px; /* Margin for spacing */
+    text-align: center; /* Center align text within each section */
+}
+
+.mini-index {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove default padding */
+}
+
+.mini-index li {
+    margin: 5px 0; /* Space between list items */
+}
+
+.mini-index a {
+    color: white; /* White link color */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s; /* Transition for hover effect */
+}
+
+.mini-index a:hover {
+    color: gold; /* Change link color on hover */
+}
+
+.social-icons {
+    display: flex; /* Flexbox for social icons */
+    justify-content: center; /* Center align icons */
+}
+
+.social-icon {
+    width: 30px; /* Icon size */
+    height: 30px; /* Icon size */
+    margin: 0 10px; /* Space between icons */
+}
+
+.footer-bottom {
+    margin-top: 20px; /* Space above footer text */
+    font-size: 14px; /* Font size for footer text */
+}

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Friz+Quadrata&display=swap" rel="stylesheet">
+        <!-- Bootstrap 5 CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl5+t9ZZ+0Bw5hM6I6EEcUc6JzFbghbnfpdeAjh4fX" crossorigin="anonymous"> 
+    <title>Ayurvedic Products Portfolio</title>
+</head>
+    <body>
+        <div class="top-trim">
+            <div class="scroll-text">Welcome to Our Ayurvedic Products Portfolio</div>
+        </div>
+        <header class="header" id="header">
+            <!-- Menu Icon for Mobile -->
+            <div class="menu-icon" onclick="toggleMenu()">
+                <img src="menu-icon.png" alt="Menu" class="menu-icon-img">
+            </div>
+            
+            <div class="logo">
+                <img src="logo.png" alt="Logo">
+            </div>
+        
+            <nav class="navigation" id="nav-menu">
+                <ul>
+                    <li><a href="#why-us">Why Us</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#about-us">About</a></li>
+                    <li><a href="#contact-form">Contact</a></li>
+                </ul>
+            </nav>
+        
+            <div class="social-icons-header">
+                <a href="https://www.facebook.com/yourfacebookpage" target="_blank">
+                    <img src="facebook-icon.png" alt="Facebook" class="social-icon">
+                </a>
+                <a href="https://www.instagram.com/yourinstagramhandle" target="_blank">
+                    <img src="instagram-icon.png" alt="Instagram" class="social-icon">
+                </a>
+                <a href="https://wa.me/1234567890" target="_blank">
+                    <img src="whatsapp-icon.png" alt="WhatsApp" class="social-icon">
+                </a>
+            </div>
+        </header>
+        <script>
+            function toggleMenu() {
+                const navMenu = document.getElementById('nav-menu');
+                navMenu.classList.toggle('active');
+                const menuIcon = document.querySelector('.menu-icon');
+    const navigation = document.querySelector('.navigation');
+
+    menuIcon.addEventListener('click', () => {
+        navigation.classList.toggle('active'); // Toggle navigation visibility
+    });
+
+    const navLinks = document.querySelectorAll('.navigation a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            navigation.classList.remove('active'); // Hide navigation when a link is clicked
+        });
+    });
+            }
+        </script>
+    <div class="hero-section">
+        <div class="hero-images">
+            <img src="placeholder1.jpg" alt="Ayurvedic Product 1" class="hero-image">
+            <img src="placeholder2.jpg" alt="Ayurvedic Product 2" class="hero-image">
+            <img src="placeholder3.jpg" alt="Ayurvedic Product 3" class="hero-image">
+        </div>
+        <div class="hero-overlay">
+            <h1>Explore Our Exquisite Ayurvedic Products</h1>
+            <p>Discover the essence of Ayurveda through our carefully curated range.</p>
+            <a href="#products" class="cta-button">View Products</a>
+        </div>
+    </div>
+
+    <section id="why-us">
+        <h2>Why Us?</h2>
+        <div class="why-us-content">
+            <div class="reason">
+                <h3>Quality Ingredients</h3>
+                <p>We use only the finest natural ingredients to ensure the best products for your health.</p>
+            </div>
+            <div class="reason">
+                <h3>Expert Formulations</h3>
+                <p>Our products are crafted by experts in Ayurveda, ensuring authenticity and efficacy.</p>
+            </div>
+            <div class="reason">
+                <h3>Customer Satisfaction</h3>
+                <p>Your satisfaction is our priority. We strive to provide excellent customer service.</p>
+            </div>
+        </div>
+    </section>
+    <section id="products">
+        <h2>Our Products</h2>
+        <div class="product-container">
+            <div class="product-card left">
+                <div class="product-image">
+                    <img src="product1.jpg" alt="Product 1">
+                </div>
+                <div class="product-details">
+                    <h3>Hair Oil</h3>
+                    <p><span class="highlight">NOURISHING & STRENGTHENING:</span> Enriched with natural oils to reduce hair fall and promote healthy hair growth.</p>
+                    <p><span class="highlight">MAKES HAIR SILKY:</span> Deep conditioning for smooth, frizz-free, and manageable hair.</p>
+                </div>
+            </div>
+            <div class="product-card right">
+                <div class="product-image">
+                    <img src="product2.jpg" alt="Product 2">
+                </div>
+                <div class="product-details">
+                    <h3>Joint Pain Oil</h3>
+                    <p><span class="highlight">RELIEVES PAIN:</span> A herbal blend to reduce joint stiffness and alleviate discomfort.</p>
+                    <p><span class="highlight">IMPROVES MOBILITY:</span> Regular use supports joint flexibility and healthy cartilage.</p>
+                </div>
+            </div>
+            <div class="product-card left">
+                <div class="product-image">
+                    <img src="product3.jpg" alt="Product 3">
+                </div>
+                <div class="product-details">
+                    <h3>Ashwagandha and Shilajit Extract</h3>
+                    <p><span class="highlight">ENERGY BOOSTER:</span> Enhances stamina and vitality with ancient Ayurvedic ingredients.</p>
+                    <p><span class="highlight">STRESS RELIEF:</span> Promotes mental clarity and reduces fatigue.</p>
+                </div>
+            </div>
+            <div class="product-card right">
+                <div class="product-image">
+                    <img src="product4.jpg" alt="Product 4">
+                </div>
+                <div class="product-details">
+                    <h3>Shampoo</h3>
+                    <p><span class="highlight">REDUCES HAIR FALL:</span> Onion Oil stimulates the scalp, promoting blood circulation and hair regrowth. Plant Keratin strengthens hair and makes it frizz-free.</p>
+                    <p><span class="highlight">MAKES HAIR SOFT:</span> Gentle surfactants cleanse hair & scalp without stripping. Keratin prevents damage & dryness, leaving hair soft & smooth.</p>
+                    <p><span class="highlight">STRENGTHENS HAIR:</span> Loaded with Plant Keratin, this Shampoo gently cleanses hair & prevents damage caused due to washing.</p>
+                    <p><span class="highlight">SAFE FOR CHEMICALLY TREATED HAIR:</span> Made from all-natural ingredients, the Shampoo does no harm & is suitable for all hair types. It is safe for coloured or chemically treated hair.</p>
+                </div>
+            </div>
+            <div class="product-card left">
+                <div class="product-image">
+                    <img src="product5.jpg" alt="Product 5">
+                </div>
+                <div class="product-details">
+                    <h3>Green Tea</h3>
+                    <p><span class="highlight">DETOXIFYING:</span> Rich in antioxidants, perfect for a daily cleanse.</p>
+                    <p><span class="highlight">BOOSTS METABOLISM:</span> Supports healthy weight management.</p>
+                </div>
+            </div>
+            <div class="product-card right">
+                <div class="product-image">
+                    <img src="product6.jpg" alt="Product 6">
+                </div>
+                <div class="product-details">
+                    <h3>Rose Tea</h3>
+                    <p><span class="highlight">SOOTHING:</span> A gentle floral infusion that calms the mind and body.</p>
+                    <p><span class="highlight">RICH IN ANTIOXIDANTS:</span> Helps rejuvenate skin and reduce stress.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="about-us">
+        <h2 style="color: gold;">About Us</h2>
+        <p>
+            Welcome to Upkaar Ayurveda, where we embrace the healing power of nature. Our journey began with a passion for Ayurvedic products, dedicated to offering holistic solutions for everyday wellness through natural remedies.
+        </p>
+        <p>
+            Our mission is to create high-quality, natural products—including oils, teas, and shampoos—that enrich your life and promote well-being. We are committed to sourcing the finest ingredients, honoring traditional practices, and ensuring sustainability in every aspect of our process.
+        </p>
+        <p>
+            At Upkaar Ayurveda, we envision a world where wellness is accessible to everyone. Join us in embracing a healthier lifestyle through the time-honored wisdom of Ayurveda.
+        </p>
+        
+    </section>
+    <section id="featured-products">
+        <h2 style="color: gold;">Featured Products</h2>
+        <div class="featured-container">
+            <div class="featured-item active">
+                <img src="fp1.jpg" alt="Best Seller" class="featured-image">
+                <h3>Best Seller</h3>
+                <p>Discover our most popular product that customers love!</p>
+            </div>
+            <div class="featured-item">
+                <img src="fp2.jpg" alt="New Arrival" class="featured-image">
+                <h3>New Arrival</h3>
+                <p>Check out our latest addition to the product line!</p>
+            </div>
+        </div>
+    </section>
+    <section id="contact-form">
+        <h2 style="color: gold;">Get in Touch</h2>
+        <form action="sendEmail.php" method="post" class="contact-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+    
+    <section id="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Mini Index</h3>
+                <ul class="mini-index">
+                    <li><a href="#why-us">Home</a></li>
+                    <li><a href="#why-us">Why Us</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#featured-products">Featured Products</a></li>
+                    <li><a href="#contact-form">Contact Us</a></li>
+                    <li><a href="#about">About Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Information</h3>
+                <p><strong>Email:</strong> upkaarayurveda@gmail.com</p>
+                <p><strong>Phone:</strong> +91 7901951218</p>
+                <p><strong>Address:</strong> 123 Ayurvedic St, City, Country</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/yourfacebookpage" target="_blank">
+                        <img src="facebook-icon.png" alt="Facebook" class="social-icon">
+                    </a>
+                    <a href="https://www.instagram.com/yourinstagramhandle" target="_blank">
+                        <img src="instagram-icon.png" alt="Instagram" class="social-icon">
+                    </a>
+                    <a href="https://wa.me/917901951218" target="_blank">
+                        <img src="whatsapp-icon.png" alt="WhatsApp" class="social-icon">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Your Company Name. All rights reserved.</p>
+        </div>
+    </section>
+    <script src="script.js"></script>
+    <!-- Add Bootstrap JS before the closing </body> tag -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
